@@ -1,0 +1,12 @@
+
+{% for message in messages %}
+<h5>{{message}}</h5>
+{% endfor %}
+<form action="register" method="POST">
+    {% csrf_token %}
+    <input type="text" name="username" placeholder="Enter Name" />
+    <input type="email" name="email" placeholder="Enter Email" />
+    <input type="password" name="password" placeholder="Enter Password" />
+    <input type="password" name="password2" placeholder="Enter Password Again" />
+    <input type="submit" />
+</form>

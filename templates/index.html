@@ -1,0 +1,38 @@
+{% comment %} <h1>
+    Welcome {{name}}, You are {{age}} years old and You are {{nationality}}.<br> {{name}} is a software engineer.
+</h1> {% endcomment %}
+
+{% load static %} 
+<link rel="stylesheet" href="{% static 'style.css' %}" >
+
+
+{% if user.is_authenticated %}
+    <h1>hello, {{user.username}}</h1>
+    <a href="logout">log out</a>
+{% else %}
+    <a href="login">login / signup</a>
+
+{% endif %}
+
+<div class="form">
+    <form method="POST" action="counter">
+        {% csrf_token %}
+        <textarea name="text" rows="10" cols="100"></textarea>
+        <input type="submit" />
+    </form>
+
+
+    {% for feature in features %}
+    <h1 class="id">{{feature.id}}</h1>
+    <h3 class="name">{{feature.name}}</h3>
+    <p class="details">{{feature.details}}</p>
+    {% comment %} {% if feature.is_true == True %}
+    <p>This is True.</p>
+    {% else %}
+    <p>This is False.</p>
+    {% endif %} {% endcomment %}
+    {% endfor %}
+
+
+    
+</div>

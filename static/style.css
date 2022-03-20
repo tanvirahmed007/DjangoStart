@@ -1,0 +1,10 @@
+
+.form{
+    background-color: brown;
+    padding: 10%;
+    width: 50%;
+}
+
+.id, .name, .details{
+    color: #fff;
+}
